@@ -17,6 +17,16 @@ II. Data types
 unsigned long int unsigned_nb;
 long int signed_nb;
 ```
+III. Coding Style
+```bash
+# I am using indent. Indent is a powerful code refactoring tool for C/C++ language.
+# In this project, I preferred Linux style. I created an alias for ease of using.
+alias indent='indent -nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce
+-ci4 -cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai -saf -saw
+-ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1'
+```
+[Visit](https://www.gnu.org/software/indent/manual/indent/Common-styles.html) for more styles.
+
 
 ## Notes
 ```bash
@@ -33,4 +43,9 @@ gcc main.c -o ans
 # get task content from terminal.
 PROJECT_ID=0
 curl "https://projecteuler.net/minimal=${PROJECT_ID}" | sed 's/<[^>]*>//g' > task.md
+```
+
+```bash
+# List all c files.
+ls */*.c | awk '{print $1}'
 ```

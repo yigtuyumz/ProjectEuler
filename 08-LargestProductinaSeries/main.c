@@ -12,7 +12,6 @@ unsigned long int get_digit(const char *c)
 	return (*c - 48);
 }
 
-
 unsigned long int task(const char *input)
 {
 	unsigned long int counter2;

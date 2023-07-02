@@ -32,7 +32,7 @@ unsigned long int task(unsigned long int limit)
 		if (is_prime(counter)) {
 			nb += counter;
 		}
-		counter+=2;
+		counter += 2;
 	}
 	return (nb);
 }
