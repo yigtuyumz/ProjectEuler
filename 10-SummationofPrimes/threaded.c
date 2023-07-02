@@ -99,6 +99,14 @@ void *thread_task(void *argp)
 
 int main(void)
 {
+	/*
+	 * Her bir thread'e esit sayi araligi saglayip saglanmadigini kontrol ediyoruz.
+	 */
+	if (LIMIT % NUM_THREADS != 0) {
+		fprintf(stderr, "Limit value could not be evenly distributed to the each Thread.\n");
+		return (-1);
+	}
+
 	/* her bir thread'in araligi. */
 	unsigned long int range = LIMIT / NUM_THREADS;
 
@@ -150,6 +158,6 @@ int main(void)
 		answer += thread_arg_arr[i].sum;
 	}
 
-	printf("%lu\n", answer);
+	fprintf(stdout, "%lu\n", answer);
 	return (0);
 }

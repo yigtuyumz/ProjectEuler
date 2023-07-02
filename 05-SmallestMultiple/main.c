@@ -19,7 +19,6 @@ unsigned long int task(unsigned long int step)
 
 int main(void)
 {
-	printf("%lu\n", task(10));
-
+	fprintf(stdout, "%lu\n", task(10));
 	return (0);
 }

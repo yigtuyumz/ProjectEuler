@@ -38,6 +38,6 @@ unsigned long int task(unsigned long int nth)
 
 int main(void)
 {
-	printf("%lu", task(NTH_PRIME));
+	fprintf(stdout, "%lu", task(NTH_PRIME));
 	return (0);
 }

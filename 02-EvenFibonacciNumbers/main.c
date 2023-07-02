@@ -25,6 +25,6 @@ unsigned long int task(unsigned long int limit)
 int main(void)
 {
 	unsigned long int ans = task(NB);
-	printf("%lu\n", ans);
+	fprintf(stdout, "%lu\n", ans);
 	return (0);
 }

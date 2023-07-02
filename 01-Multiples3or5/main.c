@@ -18,6 +18,6 @@ unsigned int task(int limit)
 int main(void)
 {
 	unsigned int ans = task(NB);
-	printf("%u\n", ans);
+	fprintf(stdout, "%u\n", ans);
 	return (0);
 }

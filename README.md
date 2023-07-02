@@ -1,8 +1,8 @@
 # Project Euler
 
-- Folders are named as \``ProblemID-ProblemName`\`.
-- Problems written in the \``task.md`\` file. (Which is located in the problem folder.)
-- All output files were named as \``ans`\`. Therefore, in .gitignore file I ignore them.
+- Folders are named as `ProblemID-ProblemName`.
+- Problems written in the `task.md` file. (Which is located in the problem folder.)
+- All output files were named as `ans`. Therefore, in .gitignore file I ignore them.
 
 - This project uses only C language.
 - I. Definitions

@@ -33,7 +33,7 @@ int nbr_len(unsigned long int nb)
 	return (res);
 }
 
-char *ultoa(unsigned long int nb)
+char *atoul(unsigned long int nb)
 {
 	char *result;
 	int len = nbr_len(nb);
@@ -64,8 +64,6 @@ int is_palindrome(char *nb)
 
 /*
  * We're just forcing here...
- * I am sure that after some calculations, mult is always lesser than the
- * biggest value.
  */
 unsigned long int task(void)
 {
@@ -77,7 +75,12 @@ unsigned long int task(void)
 		nb2 = 999;
 		while (nb2 >= 100) {
 			mult = nb1 * nb2;
-			if (is_palindrome(ultoa(mult))) {
+			if (is_palindrome(atoul(mult))) {
+				/*
+				 * In here, algorithm can be optimised.
+				 * But we're dealing numbers with 3 digits.
+				 * So the runtime of this program will not be affected too much.
+				 */
 				if (mult > biggest) {
 					biggest = mult;
 				}
@@ -91,6 +94,6 @@ unsigned long int task(void)
 
 int main(void)
 {
-	printf("%lu\n", task());
+	fprintf(stdout, "%lu\n", task());
 	return (0);
 }

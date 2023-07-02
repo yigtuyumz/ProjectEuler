@@ -21,6 +21,6 @@ unsigned long int task(unsigned long int nb)
 int main(void)
 {
 	unsigned long int ans = task(NB);
-	printf("%lu\n", ans);
+	fprintf(stdout, "%lu\n", ans);
 	return (0);
 }

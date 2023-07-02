@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+#ifndef FIRST_N
+#define FIRST_N 100
+#endif
+
 unsigned long int square(unsigned long int nb)
 {
 	return (nb * nb);
@@ -20,6 +24,6 @@ unsigned long int task(unsigned long int step)
 
 int main(void)
 {
-	printf("%lu\n", task(100));
+	fprintf(stdout, "%lu\n", task(FIRST_N));
 	return (0);
 }

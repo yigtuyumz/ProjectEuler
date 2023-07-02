@@ -50,6 +50,6 @@ unsigned long int task(void)
 
 int main(void)
 {
-	printf("%lu\n", task());
+	fprintf(stdout, "%lu\n", task());
 	return (0);
 }
