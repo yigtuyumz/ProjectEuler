@@ -5,7 +5,8 @@
 - All output files were named as `ans`. Therefore, in .gitignore file I ignore them.
 
 - This project uses only C language.
-- I. Definitions
+
+I. Definitions
 ```c
 #ifndef GIVEN_NUMBER
 #define GIVEN_NUMBER value
