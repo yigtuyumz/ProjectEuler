@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-unsigned long int exponential(unsigned long int base, unsigned long int exp)
+unsigned long int
+exponential(unsigned long int base, unsigned long int exp)
 {
 	unsigned long int r = 1;
+
 	/*
 	 * These two if statements, is for optimisation.
 	 */
@@ -16,14 +18,14 @@ unsigned long int exponential(unsigned long int base, unsigned long int exp)
 	while (exp-- != 0) {
 		r *= base;
 	}
-
 	return (r);
 }
 
 /*
  * If condition is not met, returns 0.
  */
-unsigned long int task(void)
+unsigned long int
+task(void)
 {
 	unsigned long int a = 0;
 	unsigned long int b = 0;
@@ -48,8 +50,10 @@ unsigned long int task(void)
 	return (0);
 }
 
-int main(void)
+int
+main(void)
 {
 	fprintf(stdout, "%lu\n", task());
 	return (0);
 }
+

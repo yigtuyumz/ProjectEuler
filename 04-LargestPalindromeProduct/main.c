@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>		// malloc
 
-unsigned long int my_strlen(char *c)
+unsigned long int
+my_strlen(char *c)
 {
 	unsigned long int len = 0;
+
 	while (*(c + len++)) ;
 
 	return (--len);
 }
 
-unsigned long int my_div(int len)
+unsigned long int
+my_div(int len)
 {
 	unsigned long int res = 1;
 
@@ -17,11 +20,11 @@ unsigned long int my_div(int len)
 		res *= 10;
 		len--;
 	}
-
 	return (res);
 }
 
-int nbr_len(unsigned long int nb)
+int
+nbr_len(unsigned long int nb)
 {
 	unsigned int res = 1;
 
@@ -33,7 +36,8 @@ int nbr_len(unsigned long int nb)
 	return (res);
 }
 
-char *atoul(unsigned long int nb)
+char
+*atoul(unsigned long int nb)
 {
 	char *result;
 	int len = nbr_len(nb);
@@ -53,7 +57,8 @@ char *atoul(unsigned long int nb)
 	return (result);
 }
 
-int is_palindrome(char *nb)
+int
+is_palindrome(char *nb)
 {
 	unsigned long int f = 0;
 	unsigned long int l = my_strlen(nb) - 1;
@@ -65,7 +70,8 @@ int is_palindrome(char *nb)
 /*
  * We're just forcing here...
  */
-unsigned long int task(void)
+unsigned long int
+task(void)
 {
 	int nb1 = 999;
 	int nb2 = 999;
@@ -92,8 +98,10 @@ unsigned long int task(void)
 	return (biggest);
 }
 
-int main(void)
+int
+main(void)
 {
 	fprintf(stdout, "%lu\n", task());
 	return (0);
 }
+

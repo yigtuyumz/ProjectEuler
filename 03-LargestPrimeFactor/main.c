@@ -4,7 +4,8 @@
 #define NB 600851475143
 #endif
 
-unsigned long int task(unsigned long int nb)
+unsigned long int
+task(unsigned long int nb)
 {
 	unsigned long int factor;
 	while (nb != 1) {
@@ -14,7 +15,6 @@ unsigned long int task(unsigned long int nb)
 		}
 		nb /= factor;
 	}
-
 	return (factor);
 }
 
@@ -24,3 +24,4 @@ int main(void)
 	fprintf(stdout, "%lu\n", ans);
 	return (0);
 }
+

@@ -4,7 +4,8 @@
 #define NB 1000
 #endif
 
-unsigned int task(int limit)
+unsigned int
+task(int limit)
 {
 	unsigned int total = 0;
 	for (int i = 1; i < limit; i++) {
@@ -15,9 +16,11 @@ unsigned int task(int limit)
 	return (total);
 }
 
-int main(void)
+int
+main(void)
 {
 	unsigned int ans = task(NB);
 	fprintf(stdout, "%u\n", ans);
 	return (0);
 }
+

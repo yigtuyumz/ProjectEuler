@@ -5,7 +5,8 @@
 #define TWO_MILLION 2000000
 #endif
 
-unsigned long int is_prime(unsigned long int number)
+unsigned long int
+is_prime(unsigned long int number)
 {
 	if (number <= 1) {
 		return (0);
@@ -24,7 +25,8 @@ unsigned long int is_prime(unsigned long int number)
 	return (1);
 }
 
-unsigned long int task(unsigned long int limit)
+unsigned long int
+task(unsigned long int limit)
 {
 	unsigned long int counter = 1;
 	unsigned long int nb = 2;
@@ -37,8 +39,10 @@ unsigned long int task(unsigned long int limit)
 	return (nb);
 }
 
-int main(void)
+int
+main(void)
 {
 	printf("%lu\n", task(TWO_MILLION));
 	return (0);
 }
+

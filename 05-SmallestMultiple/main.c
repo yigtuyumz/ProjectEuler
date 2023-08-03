@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-unsigned long int task(unsigned long int step)
+unsigned long int
+task(unsigned long int step)
 {
 	unsigned long int nb = 2;
 	unsigned long int s2 = (step + 1);
@@ -13,12 +14,13 @@ unsigned long int task(unsigned long int step)
 		}
 		step--;
 	}
-
 	return (nb);
 }
 
-int main(void)
+int
+main(void)
 {
 	fprintf(stdout, "%lu\n", task(10));
 	return (0);
 }
+

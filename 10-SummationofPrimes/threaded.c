@@ -30,7 +30,8 @@ typedef struct thread_data_s {
  * Asal sayi hesabi icin 6k+-1 teoreminden faydalanilarak olusturulan
  * asal sayi fonksiyonu. Fonksiyon, nb asal ise 1 degil ise 0 degerini dondurur.
  */
-unsigned long int is_prime(unsigned long int nb)
+unsigned long int
+is_prime(unsigned long int nb)
 {
 	/*
 	 * 6 dan onceki degerleri ayri ayri kontrol ediyoruz.
@@ -73,7 +74,8 @@ unsigned long int is_prime(unsigned long int nb)
  * Fonksiyon tipinin ve parametrenin void pointer olmasi, herhangi bir veri
  * olabilecegi anlamina gelir.
  */
-void *thread_task(void *argp)
+void
+*thread_task(void *argp)
 {
 	/*
 	 * argumanimizi verimizin tipine typecast ediyoruz.
@@ -97,7 +99,8 @@ void *thread_task(void *argp)
 	return (NULL);
 }
 
-int main(void)
+int
+main(void)
 {
 	/*
 	 * Her bir thread'e esit sayi araligi saglayip saglanmadigini kontrol ediyoruz.
@@ -161,3 +164,4 @@ int main(void)
 	fprintf(stdout, "%lu\n", answer);
 	return (0);
 }
+

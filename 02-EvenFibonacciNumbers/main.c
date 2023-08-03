@@ -4,11 +4,12 @@
 #define NB 4000000
 #endif
 
-unsigned long int task(unsigned long int limit)
+unsigned long int
+task(unsigned long int limit)
 {
+	unsigned long int temp;
 	unsigned long int iter = 1;
 	unsigned long int iter2 = 2;
-	unsigned long int temp;
 	unsigned long int total = 0;
 
 	while (iter < limit) {
@@ -22,9 +23,11 @@ unsigned long int task(unsigned long int limit)
 	return (total);
 }
 
-int main(void)
+int
+main(void)
 {
 	unsigned long int ans = task(NB);
 	fprintf(stdout, "%lu\n", ans);
 	return (0);
 }
+

@@ -4,7 +4,8 @@
 #define NTH_PRIME 10001
 #endif
 
-unsigned long int is_prime(unsigned long int number)
+unsigned long int
+is_prime(unsigned long int number)
 {
 	if (number <= 1) {
 		return (0);
@@ -23,7 +24,8 @@ unsigned long int is_prime(unsigned long int number)
 	return (1);
 }
 
-unsigned long int task(unsigned long int nth)
+unsigned long int
+task(unsigned long int nth)
 {
 	unsigned long int actual_number = 1;
 	while (nth != 0) {
@@ -32,12 +34,13 @@ unsigned long int task(unsigned long int nth)
 			nth--;
 		}
 	}
-
 	return (actual_number);
 }
 
-int main(void)
+int
+main(void)
 {
 	fprintf(stdout, "%lu", task(NTH_PRIME));
 	return (0);
 }
+
