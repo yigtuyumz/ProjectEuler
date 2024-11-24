@@ -1,44 +1,31 @@
 # Project Euler
 
 - Folders are named as `ProblemID-ProblemName`.
-- Problems written in the `task.md` file. (Which is located in the problem folder.)
-- All output files were named as `ans`. Therefore, in .gitignore file I ignore them.
+- Each problem is written in the `task.md` file. (Which is located in the same folder.)
+- All output files have the same name as the folder name.
 
 - This project uses only C language.
 
-I. Definitions
+## Build
+This project uses CMake 3.10 (or above). Run `./build.sh` file to build all problems in the project.
+
+## Definitions
 ```c
 #ifndef GIVEN_NUMBER
 #define GIVEN_NUMBER value
 #endif
 ```
-II. Data types
+## Data Types
 ```c
 // In general, we must deal with big numbers.
 unsigned long int unsigned_nb;
 long int signed_nb;
 ```
-III. Coding Style
-```bash
-# I am using indent. Indent is a powerful code refactoring tool for C/C++ language.
-# In this project, I preferred Linux style. I created an alias for ease of using.
-alias indent='indent -nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce
--ci4 -cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai -saf -saw
--ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1'
-```
-[Visit](https://www.gnu.org/software/indent/manual/indent/Common-styles.html) for more styles.
-
+## Coding Style
+I am using _[customized](https://gist.github.com/yigtuyumz/bf5d7313ed5d92a85d8615a2781066dd)_ GNU Indent settings for the code style in this project.
+Refer to the [documentation](https://www.gnu.org/software/indent/manual/indent/Common-styles.html) for more styles.
 
 ## Notes
-```bash
-# clears all compiled files. (must be ran under main directory)
-rm */ans
-```
-
-```bash
-# compile source code.
-gcc main.c -o ans
-```
 
 ```bash
 # get task content from terminal.
@@ -47,6 +34,6 @@ curl "https://projecteuler.net/minimal=${PROJECT_ID}" | sed 's/<[^>]*>//g' > tas
 ```
 
 ```bash
-# List all c files.
+# List all source files.
 ls */*.c | awk '{print $1}'
 ```
