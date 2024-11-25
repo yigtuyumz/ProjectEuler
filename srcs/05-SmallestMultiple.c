@@ -3,7 +3,9 @@
 unsigned_nb
 SmallestMultiple(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 20
 
     unsigned_nb step = NB;

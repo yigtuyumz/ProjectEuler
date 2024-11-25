@@ -3,7 +3,9 @@
 unsigned_nb
 DivisibilityStreaks(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 100
 
     unsigned_nb step = NB;

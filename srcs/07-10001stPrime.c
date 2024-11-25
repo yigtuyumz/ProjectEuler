@@ -3,7 +3,9 @@
 unsigned_nb
 _10001stPrime(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 10001
 
     unsigned_nb nth = NB;

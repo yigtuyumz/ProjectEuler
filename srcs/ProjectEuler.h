@@ -1,7 +1,6 @@
 #ifndef LIB_EULER
 # define LIB_EULER
 
-# define NB -1                              /* upper limit for functions */
 # define unsigned_nb unsigned long int      /* replaces ungsinged values */
 # define signed_nb long int                 /* replaces signed values */
 

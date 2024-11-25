@@ -3,7 +3,9 @@
 unsigned_nb
 EvenFibonacciNumbers(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 4000000
 
     unsigned_nb temp;

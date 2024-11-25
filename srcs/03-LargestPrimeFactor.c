@@ -3,7 +3,9 @@
 unsigned_nb
 LargestPrimeFactor(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 600851475143
 
     unsigned_nb factor = 0;

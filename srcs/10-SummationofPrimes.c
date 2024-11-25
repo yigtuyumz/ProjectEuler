@@ -3,7 +3,9 @@
 unsigned_nb
 SummationofPrimes(void)
 {
-#undef NB
+#ifdef NB
+# undef NB
+#endif
 #define NB 2000000
 
     unsigned_nb counter = 1;
