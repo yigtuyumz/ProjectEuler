@@ -18,7 +18,7 @@ SpecialPythagoreanTriplet(void)
                 if (((a + b + c) == 1000)
                     && ((square(a) + square(b))
                         == square(c)) && ((a < b)
-                                                  && (b < c))) {
+                                          && (b < c))) {
                     return (a * b * c);
                 }
                 c++;
