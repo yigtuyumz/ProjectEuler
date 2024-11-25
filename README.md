@@ -1,39 +1,64 @@
 # Project Euler
 
-- Folders are named as `ProblemID-ProblemName`.
-- Each problem is written in the `task.md` file. (Which is located in the same folder.)
-- All output files have the same name as the folder name.
+[ProjectEuler](https://projecteuler.net/) is a platform designed to improve programming skills through mathematical challenges. The problems range in difficulty, starting with easier ones and progressing to much more complex problems that require deeper problem-solving and programming expertise.
 
-- This project uses only C language.
+As the creators of Project Euler stated, the first 10 questions are publicly available and can be shared freely. However, sharing the questions beyond the first 10 is not appropriate for the following reasons:
+- **Ethics**: Without effort, people should not be rewarded. The true reward comes from *hard work* and *discipline*.
+- **Spoils**: *Improvement* and *thinking* should never stop, unless one cheats. It is pointless to acquire solutions from external sources or by circumventing the problem-solving process.
+- **Use your brain**: Challenge yourself. The real growth happens through problem-solving, not shortcuts.
 
-## Build
-This project uses CMake 3.10 (or above). Run `./build.sh` file to build all problems in the project.
-
-## Definitions
-```c
-#ifndef GIVEN_NUMBER
-#define GIVEN_NUMBER value
-#endif
+# Structure
+- This project is implemented in **C language**.
+- The `./srcs` folder contains the source code files that implement the Project Euler solutions. These are used to create the dynamic library. (libProjectEuler.so)
+- The `./tasks` folder contains the problem descriptions. These problem descriptions are directly fetched from the Project Euler website using a script.
+```bash
+i=1;while [ ${i} -le 10 ]; do curl "https://projecteuler.net/minimal=${i}" | sed 's/<[^>]*>//g' > ./tasks/${i}.md; done; unset i
 ```
-## Data Types
-```c
-// In general, we must deal with big numbers.
-unsigned long int unsigned_nb;
-long int signed_nb;
-```
-## Coding Style
-I am using _[customized](https://gist.github.com/yigtuyumz/bf5d7313ed5d92a85d8615a2781066dd)_ GNU Indent settings for the code style in this project.
-Refer to the [documentation](https://www.gnu.org/software/indent/manual/indent/Common-styles.html) for more styles.
 
-## Notes
+### To build the library:
+Before building, ensure you have `gcc` installed. To build the project:
 
 ```bash
-# get task content from terminal.
-PROJECT_ID=0
-curl "https://projecteuler.net/minimal=${PROJECT_ID}" | sed 's/<[^>]*>//g' > task.md
+make all        # Compiles all source code and creates the dynamic library in the current directory
+make clean      # Cleans object files and the ./out directory to prepare for a fresh build
+make re         # Rebuilds the project (equivalent to "make clean && make all")
 ```
 
+# Coding Style
+This project uses customized GNU Indent settings for consistent code style. You can find the settings used in this project in the following [gist](https://gist.github.com/yigtuyumz/bf5d7313ed5d92a85d8615a2781066dd).
+
+To use this coding style, you can install **GNU Indent** and configure it by following the instructions provided in the [GNU Indent manual](https://www.gnu.org/software/indent/manual/indent.html).
+
+# Using the LibProjectEuler
+An example of a program compiled with this library might look like this:
+```c
+// File: test.c
+
+#include <stdio.h>
+// #include "./srcs/ProjectEuler.h"
+
+// indirectly including LibProjectEuler symbols
+extern unsigned long int Multiples3or5(void);
+extern unsigned long int EvenFibonacciNumbers(void);
+extern unsigned long int LargestPrimeFactor(void);
+extern unsigned long int LargestPalindromeProduct(void);
+extern unsigned long int SmallestMultiple(void);
+extern unsigned long int DivisibilityStreaks(void);
+extern unsigned long int _10001stPrime(void);
+extern unsigned long int LargestProductinaSeries(void);
+extern unsigned long int SpecialPythagoreanTriplet(void);
+extern unsigned long int SummationofPrimes(void);
+
+int
+main(void)
+{
+    // You can replace SummationofPrimes() with any other function from the library
+    printf("%lu\n", SummationofPrimes());
+
+    return (0);
+}
+```
+To link and compile:
 ```bash
-# List all source files.
-ls */*.c | awk '{print $1}'
+gcc test.c -L<libProjectEuler.so file location> -lProjectEuler -Wl,-rpath=<libProjectEuler.so file location> -o test
 ```

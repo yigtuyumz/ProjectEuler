@@ -1,4 +1,5 @@
-*/ans
-*/*.c~
-account-recovery.txt
-build/
+*.c~
+*.h~
+.vscode/
+*.so
+out/
